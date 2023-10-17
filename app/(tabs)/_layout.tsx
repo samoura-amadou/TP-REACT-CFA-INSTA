@@ -2,6 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
 
+
 import Colors from '../../constants/Colors';
 
 /**
@@ -22,7 +23,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
       }}>
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="index"
         options={{
           title: 'Tab One',
@@ -42,11 +43,26 @@ export default function TabLayout() {
             </Link>
           ),
         }}
-      />
-      <Tabs.Screen
+      /> */}
+      {/* <Tabs.Screen
         name="two"
         options={{
           title: 'Tab Two',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      /> */}
+       {/*  Ajout de la page Contacts avec la liste de contacts */}
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Contacts',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="contactForm"
+        options={{
+          title: 'Contacts Formulaire',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

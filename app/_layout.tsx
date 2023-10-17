@@ -4,6 +4,8 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
+// import automatique venant de l'autocompletion
+import { ContactsContextProvider } from '../contexts/contactsContext';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -38,8 +40,11 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
+// on ajoutat le contexton peut utiliser par tout mon context 
 
-  return <RootLayoutNav />;
+  return <ContactsContextProvider> 
+          <RootLayoutNav />
+        </ContactsContextProvider>;
 }
 
 function RootLayoutNav() {
